@@ -1,5 +1,6 @@
 import React from 'react';
-import { Crown, Sparkles, TrendingUp, PlayCircle } from 'lucide-react';
+import { Crown, Sparkles, TrendingUp, Globe, BookOpen, Music, Video } from 'lucide-react';
+import { motion } from 'motion/react';
 import { ModalType } from '../types';
 
 interface HeroProps {
@@ -52,23 +53,64 @@ export function Hero({ setModal }: HeroProps) {
         </div>
       </div>
       
-      <div className="relative z-10 w-full max-w-md">
-        {/* Abstract illustrative composition */}
-        <div className="aspect-square rounded-full border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 flex items-center justify-center relative shadow-2xl">
-           <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-100 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 flex items-center justify-center">
-              <PlayCircle className="text-blue-500 opacity-20 w-32 h-32" />
-           </div>
+      <div className="relative z-10 w-full max-w-md hidden sm:block">
+        {/* Animated Earth Composition */}
+        <div className="aspect-square rounded-full flex items-center justify-center relative">
            
-           {/* Floating elements */}
-           <div className="absolute top-10 right-10 bg-white dark:bg-slate-700 p-4 rounded-2xl shadow-lg animate-bounce" style={{animationDuration: '3s'}}>
-             <span className="text-2xl">🎓</span>
-           </div>
-           <div className="absolute bottom-20 left-4 bg-white dark:bg-slate-700 p-4 rounded-2xl shadow-lg animate-bounce" style={{animationDuration: '4s'}}>
-             <span className="text-2xl">💡</span>
-           </div>
-           <div className="absolute top-1/2 -right-6 bg-white dark:bg-slate-700 p-4 rounded-2xl shadow-lg animate-bounce" style={{animationDuration: '2.5s'}}>
-             <span className="text-2xl">🎵</span>
-           </div>
+           {/* Outer orbit */}
+           <motion.div 
+             animate={{ rotate: 360 }}
+             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+             className="absolute inset-0 rounded-full border-[1.5px] border-dashed border-blue-500/30 dark:border-blue-400/20"
+           />
+           
+           {/* Middle orbit (counter-rotating) */}
+           <motion.div 
+             animate={{ rotate: -360 }}
+             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+             className="absolute inset-8 rounded-full border-[1px] border-indigo-500/20 dark:border-indigo-400/20"
+           />
+
+           {/* Earth Sphere */}
+           <motion.div 
+             animate={{ y: [-8, 8, -8] }}
+             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+             className="absolute inset-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-[0_0_60px_rgba(59,130,246,0.4)] flex items-center justify-center text-white overflow-hidden border-4 border-white/20"
+           >
+             <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="w-full h-full flex items-center justify-center opacity-40"
+             >
+                <Globe className="w-[120%] h-[120%]" strokeWidth={1} />
+             </motion.div>
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(255,255,255,0.2)_0%,_transparent_60%,_rgba(0,0,0,0.5)_100%)] pointer-events-none" />
+           </motion.div>
+           
+           {/* Floating Orbital Elements */}
+           <motion.div 
+             animate={{ rotate: 360 }}
+             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+             className="absolute inset-8 rounded-full"
+           >
+              <div className="absolute top-0 left-1/2 -mt-6 -ml-6 bg-white dark:bg-slate-700 p-3 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-600 text-blue-600 dark:text-blue-400" style={{ transform: 'rotate(-0deg)' }}>
+                <BookOpen size={24} />
+              </div>
+           </motion.div>
+
+           <motion.div 
+             animate={{ rotate: -360 }}
+             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+             className="absolute inset-0 rounded-full"
+           >
+              <div className="absolute bottom-10 -left-6 bg-white dark:bg-slate-700 p-3 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-600 text-orange-500" style={{ transform: 'rotate(0deg)' }}>
+                <Music size={24} />
+              </div>
+              <div className="absolute top-1/3 -right-6 bg-white dark:bg-slate-700 p-3 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-600 text-emerald-500" style={{ transform: 'rotate(0deg)' }}>
+                <Video size={24} />
+              </div>
+           </motion.div>
+           
         </div>
       </div>
 
