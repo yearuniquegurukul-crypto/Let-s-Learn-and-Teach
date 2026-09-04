@@ -1,0 +1,6 @@
+{
+  "name": "Let's Learn and Teach",
+  "description": "A world-class educational, entertainment, creator, community, and knowledge-sharing platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
