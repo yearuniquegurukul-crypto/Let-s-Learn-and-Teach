@@ -1,6 +1,6 @@
 import React from 'react';
 import { VideoItem } from '../types';
-import { Play, MoreVertical, ThumbsUp, Share2, Bookmark, Clock, User } from 'lucide-react';
+import { Play, MoreVertical, ThumbsUp, Share2, Bookmark, Clock, User, Music } from 'lucide-react';
 
 export function VideoCard({ video }: { video: VideoItem }) {
   return (

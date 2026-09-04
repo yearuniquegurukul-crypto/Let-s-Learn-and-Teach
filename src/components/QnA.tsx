@@ -37,7 +37,7 @@ export function QaCard({ item }: { item: QaItem }) {
               </div>
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1">
                 {item.author}
-                {item.isScholar && <ShieldCheck size={14} className="text-emerald-500" title="Verified Scholar" />}
+                {item.isScholar && <ShieldCheck size={14} className="text-emerald-500" />}
               </span>
             </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Languages, Upload, PenTool, HelpCircle, FileText, Music, Play, ShieldCheck, CreditCard, ChevronRight } from 'lucide-react';
+import { X, Languages, Upload, PenTool, HelpCircle, FileText, Music, Play, ShieldCheck, CreditCard, ChevronRight, Sparkles } from 'lucide-react';
 import { ModalType } from '../types';
 import { LANGUAGES } from '../data';
 
