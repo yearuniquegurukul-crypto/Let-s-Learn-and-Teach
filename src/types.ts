@@ -1,18 +1,10 @@
-export type ModalType = 'translate' | 'create' | 'premium' | 'auth' | 'creator' | null;
+export type ModalType = 'translate' | 'create' | 'auth' | null;
 
 export type TabType = 
   | 'home' 
-  | 'videos' 
-  | 'songs' 
-  | 'comedy' 
-  | 'education' 
-  | 'science' 
+  | 'entertainments' 
   | 'religious' 
-  | 'student-qa' 
-  | 'religious-qa' 
-  | 'creative' 
-  | 'premium' 
-  | 'creator';
+  | 'students-corner';
 
 export interface VideoItem {
   id: string;

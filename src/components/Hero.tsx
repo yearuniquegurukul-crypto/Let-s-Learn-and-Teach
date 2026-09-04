@@ -28,29 +28,6 @@ export function Hero({ setModal }: HeroProps) {
           শেখার সাথে শেখাও, নিজের জ্ঞান বিশ্বের সাথে ভাগ করো এবং আয় করার সুযোগ তৈরি করো।
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button 
-            onClick={() => setModal('premium')}
-            className="group flex flex-col items-center justify-center gap-1 px-8 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-amber-950 font-bold text-lg transition-all shadow-lg shadow-amber-500/30 hover:-translate-y-0.5"
-          >
-            <div className="flex items-center gap-2">
-              <Crown size={22} className="group-hover:rotate-12 transition-transform" />
-              Join Premium Membership
-            </div>
-            <span className="text-xs font-semibold opacity-80 uppercase tracking-wider text-amber-900/80">View Plans</span>
-          </button>
-          
-          <button 
-            onClick={() => setModal('creator')}
-            className="flex flex-col items-center justify-center gap-1 px-8 py-3 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 hover:border-emerald-500 hover:text-emerald-600 dark:hover:border-emerald-500 text-slate-700 dark:text-slate-200 font-bold text-lg transition-all shadow-sm"
-          >
-            <div className="flex items-center gap-2">
-              <TrendingUp size={22} />
-              Start Earning
-            </div>
-            <span className="text-xs font-medium opacity-80 uppercase tracking-wider">Join Creator Program</span>
-          </button>
-        </div>
       </div>
       
       <div className="relative z-10 w-full max-w-md hidden sm:block">

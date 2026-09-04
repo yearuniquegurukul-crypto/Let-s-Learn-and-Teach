@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Languages, Upload, PenTool, HelpCircle, FileText, Music, Play, ShieldCheck, CreditCard, ChevronRight, Sparkles } from 'lucide-react';
+import { X, Languages, Upload, PenTool, HelpCircle, FileText, Music, Play, Sparkles } from 'lucide-react';
 import { ModalType } from '../types';
 import { LANGUAGES } from '../data';
 
@@ -22,9 +22,7 @@ export function Modals({ activeModal, onClose }: ModalsProps) {
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
             {activeModal === 'translate' && <><Languages className="text-indigo-500" /> AI Translate</>}
             {activeModal === 'create' && <><PenTool className="text-orange-500" /> Create Post</>}
-            {activeModal === 'premium' && <><ShieldCheck className="text-amber-500" /> Premium Membership</>}
             {activeModal === 'auth' && <><UserIcon className="text-blue-500" /> Welcome Back</>}
-            {activeModal === 'creator' && <><TrendingUpIcon className="text-emerald-500" /> Creator Program</>}
           </h2>
           <button onClick={onClose} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors">
             <X size={24} />
@@ -97,36 +95,8 @@ export function Modals({ activeModal, onClose }: ModalsProps) {
             </div>
           )}
 
-          {/* PREMIUM MODAL */}
-          {activeModal === 'premium' && (
-            <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-600 text-amber-950">
-                <h3 className="text-2xl font-bold mb-2">Unlock Infinite Knowledge</h3>
-                <ul className="space-y-3 mb-6">
-                  {['✓ Ad-Free Experience', '✓ Premium Learning Content', '✓ Exclusive Community Access', '✓ Advanced AI Translation Tools', '✓ Premium Creator Benefits'].map((item, i) => (
-                    <li key={i} className="font-medium flex items-center gap-2">{item}</li>
-                  ))}
-                </ul>
-                <div className="text-3xl font-extrabold mb-1">₹499<span className="text-lg font-medium opacity-80">/month</span></div>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2"><CreditCard size={20}/> Select Payment Method</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {['UPI', 'Credit / Debit Card', 'Net Banking', 'Google Pay', 'PhonePe', 'PayPal'].map((method) => (
-                    <button key={method} className="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors text-slate-700 dark:text-slate-300 font-medium">
-                      {method}
-                      <ChevronRight size={16} className="opacity-50" />
-                    </button>
-                  ))}
-                </div>
-                <p className="text-xs text-slate-400 mt-4 text-center">* This is a secure payment gateway placeholder. Do not enter real credentials.</p>
-              </div>
-            </div>
-          )}
-
-          {/* Fallbacks for Auth/Creator omitted for brevity, showing premium/create/translate as primary */}
-          {(activeModal === 'auth' || activeModal === 'creator') && (
+          {/* Auth Fallback */}
+          {activeModal === 'auth' && (
             <div className="py-12 text-center text-slate-500">
               <div className="mb-4 flex justify-center"><Sparkles size={48} className="text-slate-300 dark:text-slate-600"/></div>
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Coming Soon</h3>
@@ -142,5 +112,4 @@ export function Modals({ activeModal, onClose }: ModalsProps) {
 
 // Inline dummy icons for the active modal header fallbacks
 function UserIcon(props: any) { return <User {...props} />; }
-function TrendingUpIcon(props: any) { return <TrendingUp {...props} />; }
-import { User, TrendingUp } from 'lucide-react';
+import { User } from 'lucide-react';
